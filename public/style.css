@@ -1,81 +1,263 @@
-/* Body Styling */
+/* General Reset and Base */
 body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #f0f4ff, #d0f0e0);
     margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('/images/bg.jpg'); /* Adjust path if different */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: #fff;
+    padding: 40px;
+    color: #333;
+    animation: fadeIn 0.7s ease-in-out;
   }
   
-  /* Main Container */
-  .container {
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 900px;
-    margin: auto;
-    margin-top: 50px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-  }
-  
-  /* Heading Styling */
-  h1, h2, h3 {
+  /* Page title */
+  h2 {
     text-align: center;
+    color: #222;
+    margin-bottom: 30px;
+  }
+  
+  /* Navigation */
+  .nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 40px;
+  }
+  
+  .nav a {
+    text-decoration: none;
     color: #fff;
-    font-size: 2.5rem;
+    background-color: #3478f6;
+    padding: 12px 22px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
   }
   
-  /* Button Styling */
-  button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #1e90ff;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 1rem;
-  }
-  
-  button:hover {
-    background-color: #0057b8;
+  .nav a:hover {
+    background-color: #235ecf;
     transform: scale(1.05);
   }
   
-  /* Link Styling */
-  a {
-    color: #1e90ff;
-    text-decoration: none;
+  /* Document List */
+  .doc-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
   }
   
-  a:hover {
+  /* Document Card */
+  .doc-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .doc-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  }
+  
+  .doc-card h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #1c1c1c;
+  }
+  
+  .doc-card p {
+    font-size: 0.9em;
+    color: #666;
+  }
+  
+  .doc-card a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    background-color: #2ecc71;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .doc-card a:hover {
+    background-color: #27ae60;
+  }
+  
+  /* Back link */
+  a[href="/"] {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  a[href="/"]:hover {
+    color: #000;
+  }
+  
+  /* Fade In Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Form Container */
+  .form-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.7s ease-in-out;
+  }
+  
+  /* Input Group */
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .input-group input:focus {
+    border-color: #4e9fff;
+    box-shadow: 0 0 8px rgba(78, 159, 255, 0.4);
+  }
+  
+  /* Button */
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4e9fff;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #3486db;
+  }
+  /* General Reset and Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Background and Body */
+  body {
+    background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding: 40px;
+    color: #fff;
+    backdrop-filter: blur(3px);
+    text-align: center;
+  }
+  
+  /* Headings */
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px #000;
+  }
+  
+  /* Navigation Links */
+  .nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+  
+  .nav a {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+  }
+  
+  /* Document List Container */
+  .doc-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  /* Individual Document Cards */
+  .doc-card {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #00000088;
+  }
+  
+  .doc-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #ffeb3b;
+  }
+  
+  .doc-card p {
+    font-style: italic;
+    color: #ddd;
+    margin-bottom: 10px;
+  }
+  
+  .doc-card a {
+    color: #00e5ff;
     text-decoration: underline;
   }
   
-  /* Mobile Responsiveness */
-  @media (max-width: 768px) {
-    .container {
-      margin: 20px;
-      padding: 15px;
-    }
-  
-    h1 {
-      font-size: 24px;
-    }
-  
-    h2 {
-      font-size: 22px;
-    }
-  
-    h3 {
-      font-size: 20px;
-    }
-  
-    button {
-      padding: 8px 15px;
-    }
+  /* Back Link */
+  a[href="/"] {
+    display: inline-block;
+    margin-top: 30px;
+    color: #fff;
+    font-weight: bold;
   }
   
