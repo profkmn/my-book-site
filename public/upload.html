@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Document - Book Storage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>📤 Upload Your Document</h2>
+
+  <div class="form-container">
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <div class="input-group">
+        <label for="title">Document Title</label>
+        <input type="text" id="title" name="title" required>
+      </div>
+
+      <div class="input-group">
+        <label for="author">Author</label>
+        <input type="text" id="author" name="author" required>
+      </div>
+
+      <div class="input-group">
+        <label for="document">Choose Document</label>
+        <input type="file" id="document" name="document" required>
+      </div>
+
+      <button type="submit">Upload Document</button>
+    </form>
+
+    <div class="nav">
+      <p><a href="/">Back to Home</a></p>
+    </div>
+  </div>
+
+</body>
+</html>
