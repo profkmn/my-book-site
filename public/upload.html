@@ -37,3 +37,26 @@
 
 </body>
 </html>
+<div class="input-group">
+    <label for="document">Choose Document</label>
+    <input type="file" id="document" name="document" required onchange="showFileName()">
+    <p id="file-name" style="font-size: 0.9em; color: #555; margin-top: 5px;"></p>
+  </div>
+  
+  <script>
+    function showFileName() {
+      const fileInput = document.getElementById('document');
+      const fileName = fileInput.files[0] ? fileInput.files[0].name : 'No file chosen';
+      document.getElementById('file-name').textContent = `Selected file: ${fileName}`;
+    }
+  </script>
+  <div class="input-group">
+    <label for="category">Category</label>
+    <input type="text" id="category" name="category" required placeholder="Enter document category">
+  </div>
+  
+  <div class="input-group">
+    <label for="tags">Tags (comma separated)</label>
+    <input type="text" id="tags" name="tags" placeholder="Enter document tags (e.g., science, tech)">
+  </div>
+  
